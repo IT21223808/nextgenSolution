@@ -8,7 +8,7 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   ],
   'Project Proposal': [
     { name: 'Proposal IT21188718', file: '/docs/proposal/IT21188718-Sathurjan.K.pdf' },
-    { name: 'Proposal IT21223808', file: '/docs/proposal/IT21223808-Linganathan.J.pdf' },
+    { name: 'Proposal IT21223808', file: '/docs/proposal/IT21223808-Linganathan . J.pdf' },
     { name: 'Proposal IT20158018', file: '/docs/proposal/IT21158018-R.A.AHAMED.pdf' },
     { name: 'Proposal IT21301254', file: '/docs/proposal/IT21301254-SilvaA.A.I.pdf' },
   ],
@@ -22,7 +22,7 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp1/RPJ_24-25_201_Progress_Presentation1.pptx' },
   ],
   'Research Paper': [
-    { name: 'RPJ_24-25J-201', file: '/docs/researchpaper/RPJ_24-25J-201.pdf' },
+    { name: 'RPJ_24-25J-201', file: '/docs/researchpaper/RPJ_24-25J-201.docx' },
   ],
   'Progress Presentation 02': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp2/RPJ_24-25_201_Progress_Presentation2.pptx' },
