@@ -50,7 +50,7 @@ export default function Publication() {
         className="relative z-10 max-w-5xl mx-auto text-center"
       >
         <motion.h2 variants={childVariants} className="text-4xl sm:text-5xl font-extrabold mb-6">
-          IEEE UEMCON 2023
+          ICAC 2025
         </motion.h2>
 
         <motion.div variants={childVariants}>
@@ -58,13 +58,13 @@ export default function Publication() {
         </motion.div>
 
         <motion.p variants={childVariants} className="text-xl sm:text-2xl font-medium mb-10">
-          For the Paper titled <span className="font-bold">"TRANSFORMING ONLINE EDUCATION: A COMPREHENSIVE STUDY OF PERSONALIZED LEARNING EXPERIENCE"</span>
+          For the Paper titled <span className="font-bold">"MACHINE LEARNING BASED AUTOMATED CONSTRUCTION PLANNING SYSTEM FOR SRI LANKA "</span>
         </motion.p>
 
         <motion.p variants={childVariants} className="text-lg sm:text-xl text-white">
           Presented in The Session <span className="italic">Machine Learning (Session 26)</span><br />
-          at <span className="font-semibold">IEEE UEMCON 2023</span> on <span className="underline">12th - 14th October 2023</span><br />
-          Columbia University, New York, USA
+          at <span className="font-semibold">ICAC 2025 </span> on <span className="underline">12th - 14th October 2025</span><br />
+          SLIIT University, Malabe, SriLanka
         </motion.p>
       </motion.div>
     </section>
