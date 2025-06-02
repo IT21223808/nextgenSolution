@@ -15,9 +15,7 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Proposal Presentation': [
     { name: 'RPJ_24-25_201_Propsal_Presentation', file: '/docs/proposalPresentation/RPJ_24-25_201_Propsal_Presentation.pptx' },
   ],
-  // 'Status Document 01': [
-  //   { name: 'Status Phase 1', file: '/docs/status1/status-phase1.pdf' },
-  // ],
+  
   'Progress Presentation 01': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp1/RPJ_24-25_201_Progress_Presentation1.pptx' },
   ],
@@ -27,9 +25,7 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Progress Presentation 02': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp2/RPJ_24-25_201_Progress_Presentation2.pptx' },
   ],
-  // 'Status Document 02': [
-  //   { name: 'Status Phase 2', file: '/docs/status2/status-phase2.pdf' },
-  // ],
+ 
   'Final Reports': [
     { name: 'FinalReport_IT21188718', file: '/docs/finalreport/IT21188718-Sathurjan.K.pdf' },
     { name: 'FinalReport_IT21223808', file: '/docs/finalreport/IT21223808-Linganathan.J.pdf' },
