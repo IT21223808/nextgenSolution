@@ -8,36 +8,36 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   ],
   'Project Proposal': [
     { name: 'Proposal IT21188718', file: '/docs/proposal/IT21188718-Sathurjan.K.pdf' },
-    { name: 'Proposal IT21223808', file: '/docs/proposal/IT21223808-Linganathan.J.pdf' },
+    { name: 'Proposal IT21223808', file: '/docs/proposal/IT21223808-Linganathan . J.pdf' },
     { name: 'Proposal IT20158018', file: '/docs/proposal/IT21158018-R.A.AHAMED.pdf' },
     { name: 'Proposal IT21301254', file: '/docs/proposal/IT21301254-SilvaA.A.I.pdf' },
   ],
   'Proposal Presentation': [
     { name: 'RPJ_24-25_201_Propsal_Presentation', file: '/docs/proposalPresentation/RPJ_24-25_201_Propsal_Presentation.pptx' },
   ],
-  'Status Document 01': [
-    { name: 'Status Phase 1', file: '/docs/status1/status-phase1.pdf' },
-  ],
+  // 'Status Document 01': [
+  //   { name: 'Status Phase 1', file: '/docs/status1/status-phase1.pdf' },
+  // ],
   'Progress Presentation 01': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp1/RPJ_24-25_201_Progress_Presentation1.pptx' },
   ],
   'Research Paper': [
-    { name: 'RPJ_24-25J-201', file: '/docs/researchpaper/RPJ_24-25J-201.pdf' },
+    { name: 'RPJ_24-25J-201', file: '/docs/researchpaper/RPJ_24-25J-201.docx' },
   ],
   'Progress Presentation 02': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp2/RPJ_24-25_201_Progress_Presentation2.pptx' },
   ],
-  'Status Document 02': [
-    { name: 'Status Phase 2', file: '/docs/status2/status-phase2.pdf' },
-  ],
+  // 'Status Document 02': [
+  //   { name: 'Status Phase 2', file: '/docs/status2/status-phase2.pdf' },
+  // ],
   'Final Reports': [
     { name: 'FinalReport_IT21188718', file: '/docs/finalreport/IT21188718-Sathurjan.K.pdf' },
     { name: 'FinalReport_IT21223808', file: '/docs/finalreport/IT21223808-Linganathan.J.pdf' },
     { name: 'FinalReport_IT20158018', file: '/docs/finalreport/IT21158018-R.A.AHAMED.pdf' },
-    { name: 'FinalReport_IT21301254', file: '/docs/finalreport/IT21301254-SilvaA.A.I.pdf' },
+    { name: 'FinalReport_IT21301254', file: '/docs/finalreport/IT21301254-SilvaAAI.pdf' },
   ],
   'Final Presentation': [
-    { name: 'RPJ_24-25_201_Final_Presentation', file: '/docs/final-presentation/defense-slides.pdf' },
+    { name: 'RPJ_24-25_201_Final_Presentation', file: '/docs/finalpresentation/RPJ_24-25_201_Progress_Presentation2.pptx' },
   ],
   'Logbook': [
     { name: 'Logbook', file: '/docs/logbook/Logbook.pdf' },

@@ -13,14 +13,14 @@ const milestones = [
   },
   {
     title: 'Project Charter Submission',
-    date: 'June 2024',
+    date: 'May 2024',
     description:
       'Once the topic was finalized, the project charter document was submitted. It included the finalized problem statement, objectives, scope, timeline, and member contributions.',
     marks: 'No marks allocated',
   },
   {
     title: 'Project Proposal Presentation',
-    date: 'February 2024',
+    date: 'July 2024',
     description:
       'Presented to a panel of judges in order to provide an overview of the proposed research.',
     marks: 'Marks Allocation-6%',
@@ -32,13 +32,13 @@ const milestones = [
       'The submission of a report which provides an in-depth analysis pertaining to key aspects of the proposed research along with the research problem, objectives, as well as the overall proposed solution.',
     marks: 'Marks Allocation-6%',
   },
-  {
-    title: 'Status Document 1',
-    date: 'December 2024',
-    description:
-      'The submission of a document that provides an overview of key tasks conducted by members during the implementation phase of the research.',
-    marks: 'Marks Allocation-1%',
-  },
+  // {
+  //   title: 'Status Document 1',
+  //   date: 'December 2024',
+  //   description:
+  //     'The submission of a document that provides an overview of key tasks conducted by members during the implementation phase of the research.',
+  //   marks: 'Marks Allocation-1%',
+  // },
   {
     title: 'Progress Presentation 1',
     date: 'December 2024',
@@ -55,7 +55,7 @@ const milestones = [
   },
   {
     title: 'Final Thesis Submission',
-    date: 'March 2025',
+    date: 'April 2025',
     description:
       'Submission of the group and individual thesis documents for evaluation.',
     marks: 'Marks Allocation-19%',
@@ -68,18 +68,11 @@ const milestones = [
     marks: 'Marks Allocation-18%',
   },
   {
-    title: 'Log Book and Status Document 2',
+    title: 'Log Book ',
     date: 'June 2025',
     description:
-      'Submission of the research logbook and status document 2 which provides an overview of all key tasks conducted by members during the implementation phase of the research. Submission of research website for evaluation.',
+      'Submission of the research logbook which provides an overview of all key tasks conducted by members during the implementation phase of the research. Submission of research website for evaluation.',
     marks: 'Marks Allocation-3%',
-  },
-  {
-    title: 'Website Assessment',
-    date: 'June 2025',
-    description:
-      'Submission of research website for evaluation.',
-    marks: 'Marks Allocation-2%',
   },
   {
     title: 'Final Report & Viva',
@@ -88,6 +81,14 @@ const milestones = [
       'Final evaluation of the completed product(100%).',
     marks: 'Marks Allocation-40%',
   },
+  {
+    title: 'Website Assessment',
+    date: 'June 2025',
+    description:
+      'Submission of research website for evaluation.',
+    marks: 'Marks Allocation-2%',
+  },
+  
 ];
 
 export default function Milestones() {
