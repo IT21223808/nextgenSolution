@@ -36,7 +36,10 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
     { name: 'RPJ_24-25_201_Final_Presentation', file: '/docs/finalpresentation/RPJ_24-25_201_Progress_Presentation2.pptx' },
   ],
   'Logbook': [
-    { name: 'Logbook', file: '/docs/logbook/Logbook.pdf' },
+    { name: 'Logbook', file: '/docs/logbook/IT21188718_Logbook.pdf' },
+    { name: 'Logbook', file: '/docs/logbook/IT21223808_Logbook.pdf' },
+    { name: 'Logbook', file: '/docs/logbook/IT21158018_Logbook.pdf' },
+    { name: 'Logbook', file: '/docs/logbook/IT21301254_Logbook.pdf' },
   ],
 };
 
