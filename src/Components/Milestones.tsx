@@ -1,170 +1,153 @@
 'use client';
+
 import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useRef, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
 
-const milestones = [
-  {
-    title: 'Project Topic Assessment',
-    date: 'May 2024',
-    description:
-      'Initial topic assessment document of the proposed research was submitted for evaluation. The submitted document included a brief overview on key aspects of the proposed research along with the research problem, research objectives, overall solution as well as member task breakdown.',
-    marks: 'No marks allocated',
-  },
-  {
-    title: 'Project Charter Submission',
-    date: 'May 2024',
-    description:
-      'Once the topic was finalized, the project charter document was submitted. It included the finalized problem statement, objectives, scope, timeline, and member contributions.',
-    marks: 'No marks allocated',
-  },
-  {
-    title: 'Project Proposal Presentation',
-    date: 'July 2024',
-    description:
-      'Presented to a panel of judges in order to provide an overview of the proposed research.',
-    marks: 'Marks Allocation-6%',
-  },
-  {
-    title: 'Project Proposal Report',
-    date: 'August 2024',
-    description:
-      'The submission of a report which provides an in-depth analysis pertaining to key aspects of the proposed research along with the research problem, objectives, as well as the overall proposed solution.',
-    marks: 'Marks Allocation-6%',
-  },
-  // {
-  //   title: 'Status Document 1',
-  //   date: 'December 2024',
-  //   description:
-  //     'The submission of a document that provides an overview of key tasks conducted by members during the implementation phase of the research.',
-  //   marks: 'Marks Allocation-1%',
-  // },
-  {
-    title: 'Progress Presentation 1',
-    date: 'December 2024',
-    description:
-      'Evaluation of 50% completion of the proposed solution by a panel of judges.',
-    marks: 'Marks Allocation-15%',
-  },
-  {
-    title: 'Research Paper draft submission',
-    date: 'March 2025',
-    description:
-      'Draft submission of the research paper submitted to the supervisor for evaluation.',
-    marks: 'Marks Allocation-10%',
-  },
-  {
-    title: 'Final Thesis Submission',
-    date: 'April 2025',
-    description:
-      'Submission of the group and individual thesis documents for evaluation.',
-    marks: 'Marks Allocation-19%',
-  },
-  {
-    title: 'Progress Presentation 2',
-    date: 'March 2025',
-    description:
-      'Evaluation of 90% completion of the proposed solution by a panel of judges.',
-    marks: 'Marks Allocation-18%',
-  },
-  {
-    title: 'Log Book ',
-    date: 'June 2025',
-    description:
-      'Submission of the research logbook which provides an overview of all key tasks conducted by members during the implementation phase of the research. Submission of research website for evaluation.',
-    marks: 'Marks Allocation-3%',
-  },
-  {
-    title: 'Final Report & Viva',
-    date: 'May 2025',
-    description:
-      'Final evaluation of the completed product(100%).',
-    marks: 'Marks Allocation-40%',
-  },
-  {
-    title: 'Website Assessment',
-    date: 'June 2025',
-    description:
-      'Submission of research website for evaluation.',
-    marks: 'Marks Allocation-2%',
-  },
-  
-];
+// Letter animation variant for staggered effect
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.05, // Staggered delay for each letter
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  }),
+};
 
-export default function Milestones() {
+// Word animation variant for hover effect
+const wordVariants = {
+  hover: {
+    scale: 1.05,
+    color: '#a1a1ff', // Subtle color change on hover
+    transition: { duration: 0.3 },
+  },
+};
+
+export default function Hero() {
+  const [scrolling, setScrolling] = useState(false);
+  const controls = useAnimation();
+
+  // Stable handlers
+  const handleScroll = useCallback(() => {
+    // Guard against SSR just in case (noop on server)
+    if (typeof window === 'undefined') return;
+    setScrolling(window.scrollY > 50);
+  }, []);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    const { clientX, clientY } = e;
+    const x = (clientX - window.innerWidth / 2) / 10;
+    const y = (clientY - window.innerHeight / 2) / 10;
+
+    controls.start({ x, y, transition: { duration: 0.1 } });
+  }, [controls]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [handleScroll, handleMouseMove]);
+
+  // Split text into words and letters for animation
+  const titleText = 'Nextgen Solution';
+  const words = titleText.split(' ');
+
   return (
     <section
-      id="milestones"
-      className="w-full bg-[#0b143a] text-white py-20 px-4 scroll-mt-20"
+      id="home"
+      className="relative w-full min-h-screen pt-24 pb-16 flex items-center justify-center overflow-hidden"
+      aria-label="Hero section"
     >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
-          Milestones
-        </h2>
-
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-white z-0" />
-
-          {/* Timeline Items */}
-          <div className="flex flex-col gap-12">
-            {milestones.map((item, idx) => {
-              const isLeft = idx % 2 === 0;
-              const { ref, inView } = useInView({ threshold: 0.2 });
-              const controls = useAnimation();
-
-              useEffect(() => {
-                if (inView) {
-                  controls.start('visible');
-                } else {
-                  controls.start('hidden');
-                }
-              }, [inView, controls]);
-
-              return (
-                <motion.div
-                  key={idx}
-                  ref={ref}
-                  variants={{
-                    hidden: { opacity: 0, y: isLeft ? 80 : -80 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  initial="hidden"
-                  animate={controls}
-                  transition={{
-                    duration: 0.8,
-                    ease: 'easeOut',
-                    delay: idx * 0.1,
-                  }}
-                  className={`relative z-10 flex flex-col md:flex-row ${
-                    isLeft ? 'md:justify-start' : 'md:justify-end'
-                  }`}
-                >
-                  {/* Timeline Dot */}
-                  <motion.div
-                    className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-cyan-300 border-4 border-white rounded-full z-10 shadow top-6"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  />
-
-                  {/* Card */}
-                  <div className={`md:w-1/2 px-4 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
-                      <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                      <p className="text-sm font-medium text-gray-500 mb-2">
-                        {item.date}
-                      </p>
-                      <p className="text-base leading-relaxed">{item.description}</p>
-                      <p className="text-sm font-semibold text-right mt-4">{item.marks}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+      {/* Background with Next/Image and subtle parallax effect */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ backgroundPosition: '0% 0%' }}
+        animate={{ backgroundPosition: scrolling ? '100% 100%' : '0% 0%' }}
+        transition={{ duration: 1, ease: 'linear' }}
+      >
+        <div className="absolute inset-0 bg-[#060d23] backdrop-blur-3xl" />
+        <div className="absolute inset-0 relative">
+          <Image
+            src="/assets/hero-bg.png"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover opacity-20"
+          />
         </div>
-      </div>
+      </motion.div>
+
+      {/* Foreground content */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative z-10 w-full max-w-[90%] sm:max-w-4xl text-center px-4"
+      >
+        <h1 className="sm:text-6xl font-bold text-white mb-6 leading-tight break-words" aria-label={titleText}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            variants={wordVariants}
+            aria-hidden
+          >
+            {words.map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-block mr-2">
+                {word.split('').map((letter, letterIndex) => (
+                  <motion.span
+                    key={letterIndex}
+                    custom={letterIndex}
+                    variants={letterVariants}
+                    className="inline-block"
+                    aria-hidden
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </motion.div>
+        </h1>
+
+        <motion.p
+          className="sm:text-2xl font-semibold text-white mb-6 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+        >
+          {"We shape our buildings; thereafter, they shape us."}
+        </motion.p>
+
+        <motion.p
+          className="text-sm italic text-gray-300"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          whileHover={{ color: '#a1a1ff', transition: { duration: 0.3 } }}
+        >
+          — Winston Churchill
+        </motion.p>
+      </motion.div>
+
+      {/* Mouse interaction for foreground movement */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        animate={controls}
+        initial={{ x: 0, y: 0 }}
+        transition={{ duration: 0.1 }}
+      />
     </section>
   );
 }

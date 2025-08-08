@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const navItems = [
   'Home', 'Introduction', 'Domain', 'Milestones', 'Features',
@@ -30,7 +31,14 @@ export default function Navbar() {
       <div className="w-full pl-4 pr-4 py-3 flex items-center justify-between">
         {/* Logo + Website name aligned to the far left */}
         <div className="flex items-center space-x-2">
-          <img src="/assets/Logo.png" alt="Logo" className="h-10 w-auto" />
+          <Image
+            src="/assets/Logo.png"
+            alt="Nextgen Solution logo"
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-auto"
+          />
           <span className="text-xl font-bold text-orange-300">Nextgen Solution</span>
         </div>
 

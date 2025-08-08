@@ -10,8 +10,6 @@ import Navbar from "@/Components/Navbar";
 import Publication from "@/Components/Publication";
 import Team from "@/Components/Team";
 import ToolsTec from "@/Components/ToolsTec";
-import { Dock } from "lucide-react";
-
 
 export default function Home() {
   return (
