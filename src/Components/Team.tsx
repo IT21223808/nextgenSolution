@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Linkedin, Facebook, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 type Member = {
   name: string;
@@ -78,10 +79,13 @@ export default function Team() {
             transition={{ duration: 0.6, delay: idx * 0.15, ease: 'easeOut' }}
             className="bg-white text-gray-800 rounded-xl shadow-md w-60 flex flex-col items-center py-6 px-4 hover:shadow-lg transition-shadow"
           >
-            <img
+            <Image
               src={member.image}
               alt={member.name}
+              width={112}  // matches w-28
+              height={112} // matches h-28
               className="w-28 h-28 object-cover rounded-full shadow-md mb-4"
+              priority={idx < 2} // eagerly load a couple of top avatars
             />
             <h3 className="font-bold text-lg text-center">{member.name}</h3>
             <p className="text-sm text-gray-600">{member.role}</p>

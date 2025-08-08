@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import gsap from 'gsap'; // Import GSAP
+import gsap from 'gsap';
+import Image from 'next/image';
 
 const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Project Registration Documents': [
@@ -15,7 +16,6 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Proposal Presentation': [
     { name: 'RPJ_24-25_201_Propsal_Presentation', file: '/docs/proposalPresentation/RPJ_24-25_201_Propsal_Presentation.pptx' },
   ],
-  
   'Progress Presentation 01': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp1/RPJ_24-25_201_Progress_Presentation1.pptx' },
   ],
@@ -25,7 +25,6 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Progress Presentation 02': [
     { name: 'RPJ_24-25_201_Progress_Presentation1', file: '/docs/pp2/RPJ_24-25_201_Progress_Presentation2.pptx' },
   ],
- 
   'Final Reports': [
     { name: 'FinalReport_IT21188718', file: '/docs/finalreport/IT21188718-Sathurjan.K.pdf' },
     { name: 'FinalReport_IT21223808', file: '/docs/finalreport/IT21223808-Linganathan.J.pdf' },
@@ -45,19 +44,15 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
 
 export default function Documents() {
   const [activeTab, setActiveTab] = useState('Project Proposal');
-  const [filesLoaded, setFilesLoaded] = useState(false);
 
-  // Animate file cards when tab changes
   useEffect(() => {
     gsap.fromTo(
       '.file-card',
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }
     );
-    setFilesLoaded(true);
   }, [activeTab]);
 
-  // Animate tab buttons when clicked
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
     gsap.to('.tab-btn', {
@@ -75,7 +70,7 @@ export default function Documents() {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-blue-700 mb-10">📁 Project Documents</h2>
 
-        {/* 🟦 Tabs */}
+        {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {Object.keys(allDocuments).map((tab) => (
             <button
@@ -92,7 +87,7 @@ export default function Documents() {
           ))}
         </div>
 
-        {/* 🧾 File Cards */}
+        {/* File Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
           {allDocuments[activeTab]?.map((file, index) => (
             <div
@@ -100,10 +95,12 @@ export default function Documents() {
               className="file-card bg-white shadow-md rounded-lg p-5 w-full max-w-xs flex flex-col items-center hover:shadow-xl transition"
             >
               {/* Icon */}
-              <img
+              <Image
                 src="https://cdn-icons-png.flaticon.com/512/337/337946.png"
-                alt="PDF Icon"
-                className="w-14 h-14 mb-4"
+                alt="File icon"
+                width={56}
+                height={56}
+                className="mb-4"
               />
               <p className="text-md font-semibold mb-2 text-gray-800">{file.name}</p>
               <a

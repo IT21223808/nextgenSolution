@@ -58,7 +58,7 @@ export default function Publication() {
         </motion.div>
 
         <motion.p variants={childVariants} className="text-xl sm:text-2xl font-medium mb-10">
-          For the Paper titled <span className="font-bold">"MACHINE LEARNING BASED AUTOMATED CONSTRUCTION PLANNING SYSTEM FOR SRI LANKA "</span>
+          For the Paper titled <span className="font-bold">MACHINE LEARNING BASED AUTOMATED CONSTRUCTION PLANNING SYSTEM FOR SRI LANKA</span>
         </motion.p>
 
         <motion.p variants={childVariants} className="text-lg sm:text-xl text-white">
