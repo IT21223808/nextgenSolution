@@ -76,7 +76,7 @@ export default function Hero() {
         transition={{ duration: 1, ease: 'linear' }}
       >
         <div className="absolute inset-0 bg-[#060d23] backdrop-blur-3xl" />
-        <div className="inset-0 relative">
+        <div className="absolute inset-0 ">
           <Image
             src="/assets/hero-bg.png"
             alt="Hero Background"
