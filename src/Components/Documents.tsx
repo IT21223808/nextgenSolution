@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import gsap from 'gsap';
-import Image from 'next/image';
+import Image from 'next/image';  // Import Image from Next.js for optimization
 
 const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Project Registration Documents': [
@@ -9,7 +9,7 @@ const allDocuments: Record<string, { name: string; file: string }[]> = {
   ],
   'Project Proposal': [
     { name: 'Proposal IT21188718', file: '/docs/proposal/IT21188718-Sathurjan.K.pdf' },
-    { name: 'Proposal IT21223808', file: '/docs/proposal/IT21223808-Linganathan . J.pdf' },
+    { name: 'Proposal IT21223808', file: '/docs/proposal/IT21223808-Linganathan .J.pdf' },
     { name: 'Proposal IT20158018', file: '/docs/proposal/IT21158018-R.A.AHAMED.pdf' },
     { name: 'Proposal IT21301254', file: '/docs/proposal/IT21301254-SilvaA.A.I.pdf' },
   ],
@@ -94,11 +94,11 @@ export default function Documents() {
               key={index}
               className="file-card bg-white shadow-md rounded-lg p-5 w-full max-w-xs flex flex-col items-center hover:shadow-xl transition"
             >
-              {/* Icon */}
-              <img
+              {/* Use Next.js Image component for optimization */}
+              <Image
                 src="https://cdn-icons-png.flaticon.com/512/337/337946.png"
                 alt="File icon"
-                width={56}
+                width={56} // Set width and height for the image
                 height={56}
                 className="mb-4"
               />
