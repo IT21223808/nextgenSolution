@@ -21,6 +21,14 @@ const teamMembers: Member[] = [
     facebook: '#',
     email: 'mailto:ravi.s@sliit.lk',
   },
+   {
+    name: 'Dr.Dharshana Kasthurirathna',
+    role: 'Co-Supervisor',
+    image: '/team/Dharshana.jpg',
+    linkedin: 'https://linkedin.com/in/dharshana-kasthurirathna-a4a3275',
+    facebook: '#',
+    email: 'mailto:dharshana.k@sliit.lk',
+  },
   {
     name: 'Sathurjan.K',
     role: 'Team Leader',
@@ -53,14 +61,7 @@ const teamMembers: Member[] = [
     facebook: '#',
     email: 'mailto:it21301254@my.sliit.lk',
   },
-  {
-    name: 'Dr.Dharshana Kasthurirathna',
-    role: 'Co-Supervisor',
-    image: '/team/Dharshana.jpg',
-    linkedin: 'https://linkedin.com/in/dharshana-kasthurirathna-a4a3275',
-    facebook: '#',
-    email: 'mailto:dharshana.k@sliit.lk',
-  },
+ 
 ];
 
 export default function Team() {
