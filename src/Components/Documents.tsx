@@ -95,7 +95,7 @@ export default function Documents() {
               className="file-card bg-white shadow-md rounded-lg p-5 w-full max-w-xs flex flex-col items-center hover:shadow-xl transition"
             >
               {/* Use Next.js Image component for optimization */}
-              <Image
+              <img
                 src="https://cdn-icons-png.flaticon.com/512/337/337946.png"
                 alt="File icon"
                 width={56} // Set width and height for the image
