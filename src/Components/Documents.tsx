@@ -100,7 +100,6 @@ export default function Documents() {
                 height={56}
                 className="mb-4"
               />
-
               <p className="text-md font-semibold mb-2 text-gray-800">{file.name}</p>
 
               <a
