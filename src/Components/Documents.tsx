@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import gsap from 'gsap';
-import Image from 'next/image';  // Import Image from Next.js for optimization
+import Image from 'next/image'; // ✅ FIX: Added Image import
 
 const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Project Registration Documents': [
@@ -76,11 +76,10 @@ export default function Documents() {
             <button
               key={tab}
               onClick={() => handleTabClick(tab)}
-              className={`tab-btn px-4 py-2 rounded-full text-sm font-medium transition cursor-pointer ${
-                tab === activeTab
+              className={`tab-btn px-4 py-2 rounded-full text-sm font-medium transition cursor-pointer ${tab === activeTab
                   ? 'bg-blue-600 text-white shadow'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -94,15 +93,15 @@ export default function Documents() {
               key={index}
               className="file-card bg-white shadow-md rounded-lg p-5 w-full max-w-xs flex flex-col items-center hover:shadow-xl transition"
             >
-              {/* Use Next.js Image component for optimization */}
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/337/337946.png"
+              <Image
+                src="/assets/pdf.png"
                 alt="File icon"
-                width={56} // Set width and height for the image
+                width={56}
                 height={56}
                 className="mb-4"
               />
               <p className="text-md font-semibold mb-2 text-gray-800">{file.name}</p>
+
               <a
                 href={file.file}
                 download
