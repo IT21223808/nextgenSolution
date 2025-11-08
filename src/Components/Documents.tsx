@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import gsap from 'gsap';
-import Image from 'next/image';  // Import Image from Next.js for optimization
 
 const allDocuments: Record<string, { name: string; file: string }[]> = {
   'Project Registration Documents': [
